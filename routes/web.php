@@ -26,23 +26,10 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 Route::get('/', function () {
     return view('welcome');
 });
-
-//Route::get('/email/verify', function () {
-//    return view('auth.verify-email');
-//})->middleware('auth')->name('verification.notice');
-//
-//Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-//    $request->fulfill();
-//
-//    return redirect('/home');
-//})->middleware(['auth', 'signed'])->name('verification.verify');
-//
-//Route::post('/email/verification-notification', function (Request $request) {
-//    $request->user()->sendEmailVerificationNotification();
-//
-//    return back()->with('message', 'Verification link sent!');
-//})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
+//роуты для теста отправки сообщений на почту
 Route::get('sendbasicemail',[\App\Http\Controllers\MailController::class, 'basic_email']);
 Route::get('sendhtmlemail',[\App\Http\Controllers\MailController::class, 'html_email']);
 Route::get('sendattachmentemail',[\App\Http\Controllers\MailController::class, 'attachment_email']);
+
+//страница с расписанием
+Route::get('schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('schedule');

@@ -1,4 +1,4 @@
-@extends('auth.layouts')
+@extends('layouts.app')
 @section('content')
     <main class="signup-form">
         <div class="cotainer">
