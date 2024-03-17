@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('qrcodes', function (Blueprint $table) {
+        Schema::create('schedule', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('schedule_id');
-            $table->foreign('schedule_id')->references('id')->on('schedule')->onDelete('cascade');
-            $table->string('code_data');
-            $table->dateTime('valid_until');
-            $table->boolean('is_used')->default(false);
+            $table->string('class_datetime');
+            $table->string('class_location');
+            $table->unsignedBigInteger('teacher_id');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('qrcodes');
+        Schema::dropIfExists('schedule');
     }
 };

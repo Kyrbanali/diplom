@@ -8,6 +8,24 @@
                         <h3 class="card-header text-center">Register User</h3>
                         <div class="card-body">
                             <form action="{{ route('register.custom') }}" method="POST">
+
+                                <div class="form-group row">
+                                    <label for="role" class="col-md-4 col-form-label text-md-right">Role</label>
+
+                                    <div class="col-md-6">
+                                        <select id="role" class="form-control @error('role') is-invalid @enderror" name="role" required>
+                                            <option value="student">Student</option>
+                                            <option value="teacher">Teacher</option>
+                                        </select>
+
+                                        @error('role')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
                                 @csrf
                                 <div class="form-group mb-3">
                                     <input type="text" placeholder="Name" id="name" class="form-control" name="name"
