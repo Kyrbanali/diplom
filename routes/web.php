@@ -35,3 +35,7 @@ Route::get('sendattachmentemail',[\App\Http\Controllers\MailController::class, '
 Route::get('schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('schedule');
 
 Route::get('main', [\App\Http\Controllers\MailController::class, 'index'])->name('main');
+
+
+//Admin routes
+Route::get('admin/login', [\App\Http\Controllers\AdminController::class, 'index']);
