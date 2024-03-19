@@ -33,3 +33,5 @@ Route::get('sendattachmentemail',[\App\Http\Controllers\MailController::class, '
 
 //страница с расписанием
 Route::get('schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('schedule');
+
+Route::get('main', [\App\Http\Controllers\MailController::class, 'index'])->name('main');

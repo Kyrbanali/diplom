@@ -9,6 +9,7 @@
             <th>Date and Time</th>
             <th>Location</th>
             <th>Teacher</th>
+            <th>Group</th>
         </tr>
         </thead>
         <tbody>
@@ -16,7 +17,7 @@
             <tr>
                 <td>{{ $class->class_datetime }}</td>
                 <td>{{ $class->class_location }}</td>
-                <td>{{ $class->teacher->name }}</td>
+                <td>{{ $class->teacher->user->name }}</td>
             </tr>
         @endforeach
         </tbody>

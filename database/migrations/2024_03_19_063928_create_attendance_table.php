@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('schedule_id');
             $table->foreign('schedule_id')->references('id')->on('schedule')->onDelete('cascade');
             $table->dateTime('attendance_datetime');
-            $table->boolean('was')->default('false');
+            $table->boolean('is_check')->default('false');
             $table->timestamps();
         });
     }

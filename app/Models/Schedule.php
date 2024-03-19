@@ -4,13 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use mysql_xdevapi\Table;
 
 class Schedule extends Model
 {
     use HasFactory;
 
     protected $table = 'schedule';
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+
+    }
 
     protected $fillable = [
         'class_datetime',
