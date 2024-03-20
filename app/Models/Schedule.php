@@ -11,16 +11,14 @@ class Schedule extends Model
 
     protected $table = 'schedule';
 
-    public function teacher()
-    {
-        return $this->belongsTo(Teacher::class);
-
-    }
-
     protected $fillable = [
         'class_datetime',
         'class_location',
         'teacher_id',
-
     ];
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
 }

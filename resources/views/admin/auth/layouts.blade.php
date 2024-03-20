@@ -25,6 +25,22 @@
             margin: 0;
         }
 
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
         main {
             padding: 20px;
         }
@@ -33,6 +49,7 @@
             background-color: #333;
             color: #fff;
             padding: 10px;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }

@@ -17,4 +17,10 @@ class ScheduleController extends Controller
         $schedule = Schedule::all();
         return view('schedule.schedule', compact('schedule'));
     }
+
+    public function adminIndex()
+    {
+        $schedule = Schedule::all();
+        return view('admin.schedule', compact('schedule'));
+    }
 }

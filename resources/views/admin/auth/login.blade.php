@@ -1,4 +1,4 @@
-@extends('admin.layouts')
+@extends('admin.auth.layouts')
 
 @section('content')
     <main class="login-form">
@@ -22,7 +22,7 @@
                                     <input type="password" placeholder="Password" id="password" class="form-control"
                                            name="password" required>
                                     @error('password')
-                                        <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="d-grid mx-auto">

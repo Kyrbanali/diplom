@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -10,7 +11,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.login');
+        return view('admin.auth.login');
     }
 
     public function postLogin(Request $request)
@@ -38,7 +39,7 @@ class AdminController extends Controller
         return redirect("/admin/login")->with('error', 'You are not allowed to access');
     }
 
-    public function signOut()
+    public function logout()
     {
         Session::flush();
         Auth::guard('admin')->logout();
