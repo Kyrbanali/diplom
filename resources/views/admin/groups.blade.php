@@ -8,21 +8,22 @@
         <tr>
             <th>Group name</th>
             <th>Group code</th>
-            <th>Students</th>
         </tr>
         </thead>
         <tbody>
         @foreach ($groups as $group)
             <tr>
                 <td>{{ $group->group_name }}</td>
-                <td>{{ $group->group_code }}</td>
-                <td>
-                    @foreach($group->students as $student)
-                        {{ $student->user->name }}
-                    @endforeach
-                </td>
+                <td><a href="{{ route('admin.group.show', $group->id) }}">{{ $group->group_code }}</a></td>
             </tr>
         @endforeach
+        <tr>
+            <th>
+                <button onclick="location.href='{{ route('admin.groups.index') }}'">+</button>
+                <button onclick="">-</button>
+                <button onclick="">редактировать</button>
+            </th>
+        </tr>
         </tbody>
     </table>
 @endsection
